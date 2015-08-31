@@ -15,6 +15,7 @@
 		D9139D781B94A9E000A8544D /* __Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = D9139D771B94A9E000A8544D /* __Tests.m */; };
 		D9139D861B94AB2700A8544D /* NewsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D9139D851B94AB2700A8544D /* NewsTableViewController.m */; };
 		D9139D881B94AB3300A8544D /* News.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D9139D871B94AB3300A8544D /* News.storyboard */; };
+		D9139D8B1B94AE4600A8544D /* NetworkTools.m in Sources */ = {isa = PBXBuildFile; fileRef = D9139D8A1B94AE4600A8544D /* NetworkTools.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +45,8 @@
 		D9139D841B94AB2700A8544D /* NewsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewsTableViewController.h; sourceTree = "<group>"; };
 		D9139D851B94AB2700A8544D /* NewsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewsTableViewController.m; sourceTree = "<group>"; };
 		D9139D871B94AB3300A8544D /* News.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = News.storyboard; sourceTree = "<group>"; };
+		D9139D891B94AE4600A8544D /* NetworkTools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetworkTools.h; sourceTree = "<group>"; };
+		D9139D8A1B94AE4600A8544D /* NetworkTools.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetworkTools.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -155,6 +158,8 @@
 		D9139D831B94AB0000A8544D /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				D9139D891B94AE4600A8544D /* NetworkTools.h */,
+				D9139D8A1B94AE4600A8544D /* NetworkTools.m */,
 			);
 			path = Tools;
 			sourceTree = "<group>";
@@ -302,6 +307,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D9139D8B1B94AE4600A8544D /* NetworkTools.m in Sources */,
 				D9139D861B94AB2700A8544D /* NewsTableViewController.m in Sources */,
 				D9139D611B94A9E000A8544D /* AppDelegate.m in Sources */,
 				D9139D5E1B94A9E000A8544D /* main.m in Sources */,
