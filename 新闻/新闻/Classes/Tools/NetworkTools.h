@@ -10,6 +10,9 @@
 
 @interface NetworkTools : AFHTTPSessionManager
 
+/**
+ *  全局接口
+ */
 + (instancetype)sharedNetworkTools;
 
 @end
