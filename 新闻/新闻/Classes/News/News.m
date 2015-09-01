@@ -8,6 +8,7 @@
 
 #import "News.h"
 #import "NetworkTools.h"
+#import <objc/runtime.h>
 
 @implementation News
 
@@ -15,8 +16,7 @@
 {
     id obj = [[self alloc] init];
     
-    NSArray *propertis = @[@"title", @"digest", @"replyCount", @"imgsrc"];
-    
+    NSArray *propertis = [self loadPropertis];
     
     for (NSString *key in propertis)
     {
@@ -30,6 +30,32 @@
     
     return obj;
 }
+
++ (NSArray *)loadPropertis
+{
+    // 属性计数指针
+    unsigned int count = 0;
+    objc_property_t *list = class_copyPropertyList([self class], &count);
+    
+    NSMutableArray *arryM = [NSMutableArray arrayWithCapacity:count];
+    
+//    NSLog(@"属性数量 %u", count);
+    for (unsigned int i = 0; i < count; ++i)
+    {
+        objc_property_t pty = list[i];
+        
+        const char *cname = property_getName(pty);
+        
+        [arryM addObject:[NSString stringWithUTF8String:cname]];
+    }
+    
+    NSLog(@"%@", arryM);
+    
+    free(list);
+    
+    return arryM.copy;
+}
+
 
 - (NSString *)description
 {
@@ -56,7 +82,7 @@
             [arrayM addObject:[self newsWithDict:obj]];
         }
         
-        NSLog(@"%@", arrayM);
+//        NSLog(@"%@", arrayM);
         
     } failure:^(NSURLSessionDataTask * task, NSError * error) {
         
