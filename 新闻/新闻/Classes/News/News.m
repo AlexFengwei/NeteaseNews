@@ -31,8 +31,18 @@
     return obj;
 }
 
+// 动态加载类的属性
+const char *kPropertis = "kPropertis";
 + (NSArray *)loadPropertis
 {
+    // 利用关联对象, 动态给类添加属性
+    NSArray *pList = objc_getAssociatedObject(self, kPropertis);
+    if (pList != nil)
+    {
+//        NSLog(@"%@", pList);
+        return pList;
+    }
+    
     // 属性计数指针
     unsigned int count = 0;
     objc_property_t *list = class_copyPropertyList([self class], &count);
@@ -52,6 +62,8 @@
     NSLog(@"%@", arryM);
     
     free(list);
+    
+    objc_setAssociatedObject(self, kPropertis, arryM, OBJC_ASSOCIATION_COPY_NONATOMIC);
     
     return arryM.copy;
 }
@@ -82,7 +94,7 @@
             [arrayM addObject:[self newsWithDict:obj]];
         }
         
-//        NSLog(@"%@", arrayM);
+        NSLog(@"%@", arrayM);
         
     } failure:^(NSURLSessionDataTask * task, NSError * error) {
         

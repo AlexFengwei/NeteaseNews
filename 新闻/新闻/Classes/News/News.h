@@ -26,6 +26,7 @@
  *  图片地址
  */
 @property (nonatomic, copy) NSString *imgsrc;
+//@property (nonatomic, copy) NSString *haha;
 
 + (instancetype)newsWithDict:(NSDictionary *)dict;
 /**
